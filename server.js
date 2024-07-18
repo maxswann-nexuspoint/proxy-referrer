@@ -3,13 +3,13 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-// app.use((req, res, next) => {
-//   req.headers['referer'] = 'https://www.google.com';  // Spoofed referer
-//   next();
-// });
+app.use((req, res, next) => {
+  req.headers['referer'] = 'https://www.google.com';  // Spoofed referer
+  next();
+});
 
 app.use('/', createProxyMiddleware({
-  target: 'http://127.0.0.1:3000', // Your local server
+  target: 'https://webuyoldvans.pre.nexuspointdev.co.uk/', // Your local server
   changeOrigin: true,
   logLevel: 'debug', // Enable logging for debugging
 }));
