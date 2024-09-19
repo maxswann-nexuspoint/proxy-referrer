@@ -9,7 +9,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', createProxyMiddleware({
-  target: 'https://webuyoldvans.pre.nexuspointdev.co.uk/', // Your local server
+  target: 'https://template-site.dev.nexuspointdev.co.uk/', // The site you want to test
   changeOrigin: true,
   logLevel: 'debug', // Enable logging for debugging
 }));
